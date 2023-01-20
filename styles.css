@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Anybody&display=swap');
+
+:root{
+    --bg-color: #232425;
+    --primary-clr: #03ff5f;
+    --secondary-clr:#dfdfdf;
+}
+html{
+    scroll-behavior: smooth;
+    scroll-padding: 35px;
+}
+body{
+    font-family: 'Anybody', cursive;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    background-color: var(--bg-color);
+    color: var(--secondary-clr);
+}
+nav{
+    width: 100vw;
+    height: 30px;
+    position: fixed;
+    background-color: var(--primary-clr);
+    color: var(--bg-color);
+    padding: 0;
+    margin: 0;
+}
+nav h2{
+    padding-left: 5px;
+    margin: 0;
+}
+nav ul{
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+nav li{
+    display: inline-block;
+    position: relative;
+}
+nav a{
+    text-decoration: none;
+    color: var(--bg-color);
+}
+nav li::after{
+    content: '';
+    display: block;
+    border-radius: 100vmax;
+    height: 5px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    transform: scale(0,1);
+    transition: transform ease-in-out 300ms;
+    background: none;
+}
+nav li:hover::after{
+    background: var(--bg-color);
+    transform: scale(1,1);
+}
+
+.hero-cont{
+    display: flex;
+    justify-content: center;
+}
+.hero{
+    background: linear-gradient(70deg,#d103ff,#4603ff,#03b3ff,#03ffdd);
+    margin-top: 40px;
+    background-size: 500%;
+    background-position: left;
+    width: 95vw;
+    justify-self:center;
+    height: 300px;
+    border-radius: 10px;
+    color: var(--secondary-clr);
+    animation: bg-transit 40s 1s infinite;
+    transition-property: background-position;
+    display: block;
+}
+@keyframes bg-transit{
+    0%{
+        background-position: left;
+    }
+    50%{
+        background-position: right;
+    }
+    100%{
+        background-position: left;
+    }
+}
+.hero > h1{
+    font-size: 3rem;
+    padding: 0 1rem;
+}
+.hero > h2{
+    font-size: 2.5rem;
+    padding: 0 1rem;
+}
+
+.description{
+    display: block;
+    margin: 20px 0 0 2.5% ;
+}
+.description > img{
+    height: 150px;
+    aspect-ratio: 1;
+    padding: 20px 20px 20px 0;
+}
+#projects{
+    margin-left: 2.5%;
+}
+.projects{
+   display: flex;
+   justify-content: center;
+   flex-direction: row;
+   gap: 40px;
+}
+.project{
+    height: 300px;
+    width: 400px;
+    border: 2px solid var(--secondary-clr);
+    border-radius: 10px;
+}
+.project>img{
+    width: 100%;
+    height: 26.6%;
+    border-radius: 8px;
+}
+.project > a{
+    color: var(--bg-color);
+    background-color: var(--primary-clr);
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    padding: 2px 5px;
+}
+.contact{
+    margin-left: 2.5%;
+    margin-block: 20px;
+    background-color: var(--primary-clr);
+    width: 40%;
+    min-width: fit-content;
+    border-radius: 10px;
+    color: var(--bg-color);
+}
+.contact>h2{
+    margin-left: 10px;
+}
+form > *{
+    border-radius: 100vmax;
+    padding-left: 1px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+form>input{
+    height: 20px;
+}
+form>button{
+    padding-block: 5px;
+    padding-inline:2px;
+    background-color: var(--bg-color);
+    color: var(--secondary-clr);
+}
+form > textarea{
+    border-radius: 1vmax;
+    max-width: 90%;
+}
+@media screen and (max-width:800px){
+    .projects{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+footer{
+    background-color: #2c3033;
+    opacity: 0.6s;
+    backdrop-filter: blur(10px);
+    color: var(--secondary-clr);
+    height: 25px;
+    display: flex;
+    align-items: center;
+}
+footer > span{
+    opacity: 0.85;
+}
+.div{
+    padding-inline: 30px;
+}
+footer a{
+    color: var(--secondary-clr);
+    text-decoration: none;
+}
+footer a:hover{
+    text-decoration: underline;
+}
+@media screen and (max-width:500px) {
+    .menu{
+        display: none;
+    }
+    .description img{
+        display: none;
+
+    }
+    .project{
+        width:100%
+    }
+}
