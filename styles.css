@@ -169,7 +169,9 @@ form>button{
 }
 form > textarea{
     border-radius: 1vmax;
-    max-width: 90%;
+    max-width: 321.55px;
+    min-width: 321.55px;
+    
 }
 @media screen and (max-width:800px){
     .projects{
