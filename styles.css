@@ -145,7 +145,7 @@ nav li:hover::after{
     padding: 2px 5px;
 }
 .project > a:hover{
-    backgroun:#26fc74;
+    background:#26fc74;
 }
 .contact{
     margin-left: 2.5%;
